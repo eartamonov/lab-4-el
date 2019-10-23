@@ -25,19 +25,23 @@ public class SpringELXmlBasedTest {
 	@Test
 	public void testInitCountry() {
 		Country country = (Country)  context.getBean("russiaBean");
+		Country franceCountry = (Country)  context.getBean("franceBean");
 		assertEquals(expectedCountry, country);
 		assertEquals("Moscow, population: 11000000", country.getFullCapitalInfo());
 		System.out.println(country);
+		System.out.println(franceCountry);
 	}
 	
 	
 	@Test
 	public void testInitPerson() {
 		UsualPerson person = (UsualPerson) context.getBean("russianPersonBean");
+		UsualPerson frenchPerson = (UsualPerson) context.getBean("frenchPersonBean");
 //		FYI: Another way to achieve the bean
 //		person = context.getBean(UsualPerson.class);
 		assertEquals(expectedPerson, person);
 		System.out.println(person);
+		System.out.println(frenchPerson);
 
 	}
 
